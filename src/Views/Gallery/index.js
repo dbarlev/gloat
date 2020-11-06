@@ -1,32 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import useAxios from 'axios-hooks';
-import { Card, Spin, Pagination } from 'antd';
-import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
-import { useGlobal } from '../../Context/Global';
+import { useGallery } from '../../Context/Gallery';
 import Pagniate from '../../Components/Paginiation';
-
-const { Meta } = Card;
-
-const Spinner = styled(Spin)`
-    position: absolute;
-    top: 45%;
-    left: 50%;
-`
+import ImageCard from './ImageCard';
+import { Spinner } from '../../Components/Spinner';
+import { Row, Col } from 'antd';
 
 const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 300px);
-    margin-left: 30px;
     grid-gap: 20px;
-    margin-left: 17%;
+    margin-left: 15%;
     margin-top: 3%;
     margin-bottom: 20px;
 `
 
-function Gallery() {
+const Gallery = () => {
     const maxPerPage = 12;
-    const { totalImages, imagesLoading } = useGlobal();
+    const { totalImages, imagesLoading } = useGallery();
     const [images, setImages] = useState([]);
 
     useEffect(() => {
@@ -48,18 +39,10 @@ function Gallery() {
                                 <Container>
                                     {
                                         images.map(img => (
-
-                                            <LazyLoad key={img.id} height={200}>
-                                                <Card
-                                                    hoverable
-                                                    style={{ width: 240 }}
-                                                    cover={<img alt="example" src={img.url} />}
-                                                >
-                                                    <Meta title="Europe Street beat" description="www.instagram.com" />
-                                                </Card>
-                                            </LazyLoad>
+                                            <ImageCard img={img} />
                                         ))
                                     }
+
                                 </Container>
                             </Pagniate>
                         }

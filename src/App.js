@@ -5,7 +5,7 @@ import Opportunities from './Views/Opportunities';
 import { Layout } from 'antd';
 import AppHeader from './Views/Header';
 import styled from 'styled-components'
-import { GlobalProvider } from './Context/Global';
+import { GalleryProvider } from './Context/Gallery';
 
 const { Content } = Layout;
 
@@ -17,15 +17,15 @@ const StyledContent = styled(Content)`
 function App() {
   return (
     <Layout>
-      <GlobalProvider>
-        <AppHeader />
-        <StyledContent>
+      <AppHeader />
+      <StyledContent>
+        <GalleryProvider>
           <Router>
             <Opportunities path="/" />
             <Gallery path="gallery" />
           </Router>
-        </StyledContent>
-      </GlobalProvider>
+        </GalleryProvider>
+      </StyledContent>
     </Layout>
   );
 }

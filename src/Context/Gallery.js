@@ -1,9 +1,9 @@
 import React, { useEffect, createContext, useContext } from "react";
 import useAxios from 'axios-hooks';
 
-export const GlobalContext = createContext();
+export const GalleryContext = createContext();
 
-export const GlobalProvider = props => {
+export const GalleryProvider = props => {
 
     const [{ data: totalImages, loading: imagesLoading, error }, getImages] = useAxios(
         {
@@ -18,13 +18,13 @@ export const GlobalProvider = props => {
     }, [])
 
     return (
-        <GlobalContext.Provider value={{ totalImages, imagesLoading }}>
+        <GalleryContext.Provider value={{ totalImages, imagesLoading }}>
             {props.children}
-        </GlobalContext.Provider>
+        </GalleryContext.Provider>
     );
 };
 
-export const useGlobal = () => {
-    return useContext(GlobalContext);
+export const useGallery = () => {
+    return useContext(GalleryContext);
 }
 

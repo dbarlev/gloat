@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Tabs } from 'antd';
 import styled from 'styled-components'
-import { COLORS } from '../../Shared/colors';
 import Suggestions from './Suggestions';
 import useAxios from 'axios-hooks';
 import Wishlist from './Wishlist';
+import { Spinner } from '../../Components/Spinner';
 
 const { TabPane } = Tabs;
 
@@ -42,10 +42,16 @@ function Opportunities() {
         <Container>
             <Tabs defaultActiveKey="1" size="large" style={{ marginBottom: 32 }}>
                 <TabPane tab="SUGGESTIONS" key="1">
-                    <Suggestions data={data} liked={liked} addToWishlist={addToWishlist} />
+                    {
+                        loading
+                            ?
+                            <Spinner size="large" />
+                            :
+                            <Suggestions data={data} liked={liked} addToWishlist={addToWishlist} />
+                    }
                 </TabPane>
                 <TabPane tab="WISHLIST" key="2">
-                    <Wishlist data={data} liked={liked} />
+                    <Wishlist data={data} liked={liked} addToWishlist={addToWishlist} />
                 </TabPane>
             </Tabs>
         </Container>

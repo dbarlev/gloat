@@ -15,8 +15,9 @@ const Container = styled.div`
 `
 
 const Card = styled.div`
-    border: 1px solid lightgray;
-    height: 300px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    height: 355px;
 `
 
 function Wishlist({ addToWishlist, liked, data }) {
@@ -35,7 +36,7 @@ function Wishlist({ addToWishlist, liked, data }) {
                                             ?
                                             <ProjectCard addToWishlist={addToWishlist} item={item} />
                                             :
-                                            <NetworkCard item={item} />
+                                            <NetworkCard addToWishlist={addToWishlist} item={item} />
                                     }
                                 </Card>
                                 :
