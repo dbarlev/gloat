@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Router } from "@reach/router";
+import Gallery from './Views/Gallery';
+import Opportunities from './Views/Opportunities';
+import { Layout } from 'antd';
+import AppHeader from './Views/Header';
+import styled from 'styled-components'
+import { GlobalProvider } from './Context/Global';
+
+const { Content } = Layout;
+
+const StyledContent = styled(Content)`
+  marginTop: 64;
+  background: white;
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <GlobalProvider>
+        <AppHeader />
+        <StyledContent>
+          <Router>
+            <Opportunities path="/" />
+            <Gallery path="gallery" />
+          </Router>
+        </StyledContent>
+      </GlobalProvider>
+    </Layout>
   );
 }
 
