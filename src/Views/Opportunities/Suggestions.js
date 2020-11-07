@@ -15,7 +15,7 @@ function Suggestions({ data, addToWishlist, liked }) {
         <Row gutter={[16, 16]}>
             {
                 data && data.filter(filter).map(item => (
-                    <Col key={item.id} sm={24} md={12} lg={12} xxl={6} xl={8}>
+                    <Col key={item.id} xs={24} sm={24} md={12} lg={12} xxl={6} xl={8}>
                         <Card addToWishlist={addToWishlist} item={item} />
                     </Col>
                 ))

@@ -66,3 +66,9 @@ export const PendingStyle = styled.div`
     height: 30px;
     border-radius: 5px 5px 0 0; 
 `
+
+export const ContentContainer = styled.div`
+    padding: 15px;
+    height: 100%;
+    display: grid;
+`

@@ -3,6 +3,8 @@ import { Card, Button } from 'antd';
 import { COLORS } from '../../Shared/colors';
 import styled from 'styled-components';
 import { UndoOutlined } from '@ant-design/icons';
+import { ToastSuccess } from '../../Components/Toast';
+
 const { Grid } = Card;
 
 const ButtonsContainer = styled(Grid)`
@@ -39,6 +41,13 @@ const Actions = ({ img, editedImages, dispatchEditedImages, newTitle }) => {
         dispatchEditedImages({ type: 'delete', id: img.id })
     }
 
+    const save = () => {
+        const saveImage = img;
+        saveImage.title = imgTitle || img.title;
+        console.log(saveImage);
+        ToastSuccess(`Image ${img.id} saved successfully!`);
+    }
+
     return (
         <ButtonsContainer>
             {
@@ -70,7 +79,7 @@ const Actions = ({ img, editedImages, dispatchEditedImages, newTitle }) => {
 
                         <StyledButton
                             disabled={imgState}
-                            onClick={() => console.log(img)}
+                            onClick={save}
                         >
                             SAVE
                         </StyledButton>

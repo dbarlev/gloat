@@ -8,7 +8,7 @@ function Wishlist({ liked, data }) {
         <Row gutter={[16, 16]}>
             {
                 data && data.map(item => (
-                    <Col key={item.id} sm={24} md={12} lg={12} xxl={6} xl={8}>
+                    <Col key={item.id} xs={24} sm={24} md={12} lg={12} xxl={6} xl={8}>
                         {
                             liked.includes(item.id)
                                 ?

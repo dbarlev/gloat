@@ -5,6 +5,7 @@ import Suggestions from './Suggestions';
 import useAxios from 'axios-hooks';
 import Wishlist from './Wishlist';
 import { Spinner } from '../../Components/Spinner';
+import { ToastSuccess } from '../../Components/Toast';
 
 const { TabPane } = Tabs;
 
@@ -21,6 +22,7 @@ function Opportunities() {
         (id) => {
             if (!liked.includes(id)) {
                 setLiked([...liked, id]);
+                ToastSuccess("Suggestion pass to wishilist successfully");
             }
         },
         [liked],

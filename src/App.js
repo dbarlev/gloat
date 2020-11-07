@@ -1,11 +1,9 @@
 import React from 'react';
-import { Router } from "@reach/router";
-import Gallery from './Views/Gallery';
-import Opportunities from './Views/Opportunities';
 import { Layout } from 'antd';
 import AppHeader from './Views/Header';
 import styled from 'styled-components'
 import { GalleryProvider } from './Context/Gallery';
+import MainRoutes from './Routes';
 
 const { Content } = Layout;
 
@@ -20,10 +18,7 @@ function App() {
       <AppHeader />
       <StyledContent>
         <GalleryProvider>
-          <Router>
-            <Opportunities path="/" />
-            <Gallery path="gallery" />
-          </Router>
+          <MainRoutes />
         </GalleryProvider>
       </StyledContent>
     </Layout>

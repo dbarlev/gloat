@@ -9,7 +9,7 @@
 
 ## 3rd party libraries
 1. Router - @reach/router
-2. UI - antd \
+2. UI - antd
 3. Icons - @ant-design/icons
 4. Style - styled-components
-5. ajax - axios-hooks
+5. Ajax - axios-hooks

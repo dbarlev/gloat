@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import { Tag, Avatar } from 'antd';
+import React from 'react';
+import { Avatar } from 'antd';
 import { COLORS } from '../../../../Shared/colors';
-import { PushpinOutlined, EllipsisOutlined, TagFilled } from '@ant-design/icons';
+import { PushpinOutlined } from '@ant-design/icons';
 import {
     Container,
     Title,
     Location,
-    PersonContainer
+    PersonContainer,
+    ContentContainer
 } from './styles';
 import CardFooter from '../CardFooter';
 import CardHeading from '../CardHeading';
@@ -17,20 +18,20 @@ const ProjectCard = ({ item, addToWishlist }) => {
     return (
         <Container>
             <Pending isWishlist={!addToWishlist} />
-            <div style={{ padding: 15, height: '100%', display: 'grid' }}>
+            <ContentContainer style={{ gridTemplateRows: !addToWishlist ? '10% 7% 18% 50%' : '10% 7% 22% 10%' }}>
                 <CardHeading tagColor="gold" tagText={item.type.toUpperCase()} />
                 <Title>Request a connection</Title>
                 <Location>
-                    <span><PushpinOutlined /></span>
+                    <span style={{ marginRight: 5 }}><PushpinOutlined /></span>
                     <span>{item.location.name}</span>
                 </Location>
                 <PersonContainer>
-                <Avatar style={{ backgroundColor: COLORS.PINK, justifySelf: 'center' }} size={60}>{item.firstName[0] + item.lastName[0]}</Avatar>
+                    <Avatar style={{ backgroundColor: COLORS.PINK, justifySelf: 'center' }} size={60}>{item.firstName[0] + item.lastName[0]}</Avatar>
                     <span>{item.name}</span>
                     <span>{item.title}</span>
                 </PersonContainer>
                 <CardFooter isWishlist={!addToWishlist} addToWishlist={() => addToWishlist(item.id)} />
-            </div>
+            </ContentContainer>
         </Container>
     )
 }
