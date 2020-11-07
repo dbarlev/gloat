@@ -15,7 +15,7 @@ const Container = styled.div`
 
 const Gallery = () => {
     const maxPerPage = 12;
-    const { totalImages, imagesLoading } = useGallery();
+    const { totalImages, imagesLoading, editedImages, dispatchEditedImages } = useGallery();
     const [images, setImages] = useState([]);
 
     useEffect(() => {
@@ -34,11 +34,11 @@ const Gallery = () => {
                     <>
                         {!!images.length &&
                             <Pagniate dataCollection={totalImages} setCurrentData={setImages} maxPerPage={maxPerPage}>
-                            <Row justify="center" gutter={[16, 16]}>
+                                <Row justify="center" gutter={[16, 16]}>
                                     {
                                         images.map(img => (
-                                            <Col sm={24} md={12} lg={10} xxl={6} xl={7}>
-                                                <ImageCard img={img} />
+                                            <Col sm={24} md={12} lg={10} xxl={8} xl={8}>
+                                                <ImageCard editedImages={editedImages} dispatchEditedImages={dispatchEditedImages} img={img} />
                                             </Col>
                                         ))
                                     }

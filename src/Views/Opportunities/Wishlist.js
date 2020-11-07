@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from './Card/Card';
 import { Row, Col } from 'antd';
 
-function Wishlist({ addToWishlist, liked, data }) {
+function Wishlist({ liked, data }) {
 
     return (
         <Row gutter={[16, 16]}>
@@ -12,7 +12,7 @@ function Wishlist({ addToWishlist, liked, data }) {
                         {
                             liked.includes(item.id)
                                 ?
-                                <Card addToWishlist={addToWishlist} item={item} />
+                                <Card item={item} />
                                 :
                                 null
                         }

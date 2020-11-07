@@ -6,3 +6,10 @@
 3. In terminal/cmd run 'yarn install'
 4. Run 'yarn start'
 5. ENJOY! :D
+
+## 3rd party libraries
+Router - @reach/router
+UI - antd
+Icons - @ant-design/icons
+Style - styled-components
+Ajax calls - axios-hooks

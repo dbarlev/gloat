@@ -11,7 +11,7 @@ const TYPES = {
 const Container = styled.div`
     border: 1px solid #f0f0f0;
     border-radius: 5px;
-    height: 355px;
+    height: 375px;
 `
 
 function Card({ addToWishlist, item }) {

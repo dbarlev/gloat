@@ -1,28 +1,23 @@
 import styled from 'styled-components';
+import { COLORS } from '../../../../Shared/colors';
 
 export const Container = styled.div`
-    padding: 15px;
     height: 100%;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-gap: 5px;
+    border-radius: 5px;
 `
 
 export const StyledCardHeading = styled.div`
     display: flex;
-    margin-bottom: 10px;
 `
 
 export const Title = styled.h2`
     color: black;
     font-size: 15px;
-    margin-bottom: 10px;
 `
 
 export const SubTitle = styled.div`
     color: #b1afaf;
     font-size: 12px;
-    margin-bottom: 10px;
     font-weight: 500;
 `
 
@@ -30,7 +25,6 @@ export const Location = styled.div`
     color: #b1afaf;
     font-size: 12px;
     font-weight: 500;
-    margin-bottom: 30px;
 `
 
 export const CoverImage = styled.img`
@@ -43,16 +37,15 @@ export const StyledCardFooter = styled.div`
     font-size: 12px;
     font-weight: 500;
     display: flex;
-    margin-top: 10px;
+    align-items: ${props => props.isWishlist ? 'flex-start' : 'flex-end'};
 `
 
 export const MoreDetails = styled.div`
-   font-size: 13px;
-   font-weight: 500;
-   text-decoration: underline;
-   flex: 1;
-   line-height: 40px;
-   cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: underline;
+    flex: 1;
+    cursor: pointer;
 `
 
 export const PersonContainer = styled.div`
@@ -62,4 +55,14 @@ export const PersonContainer = styled.div`
     display: grid;
     justify-content: center;
     align-items: center;
+    text-align: center;
+`
+
+export const PendingStyle = styled.div`
+    padding-left: 15px;
+    padding-top: 5px;
+    background: ${COLORS.BLACK};
+    color: white;
+    height: 30px;
+    border-radius: 5px 5px 0 0; 
 `

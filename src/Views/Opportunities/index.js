@@ -51,7 +51,7 @@ function Opportunities() {
                     }
                 </TabPane>
                 <TabPane tab="WISHLIST" key="2">
-                    <Wishlist data={data} liked={liked} addToWishlist={addToWishlist} />
+                    <Wishlist data={data} liked={liked} />
                 </TabPane>
             </Tabs>
         </Container>
