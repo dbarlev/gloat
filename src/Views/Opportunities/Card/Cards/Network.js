@@ -25,7 +25,7 @@ const ProjectCard = ({ item, addToWishlist }) => {
                     <span>{item.location.name}</span>
                 </Location>
                 <PersonContainer>
-                    <Avatar style={{ backgroundColor: COLORS.PINK, justifySelf: 'center' }} size={60}>DB</Avatar>
+                <Avatar style={{ backgroundColor: COLORS.PINK, justifySelf: 'center' }} size={60}>{item.firstName[0] + item.lastName[0]}</Avatar>
                     <span>{item.name}</span>
                     <span>{item.title}</span>
                 </PersonContainer>

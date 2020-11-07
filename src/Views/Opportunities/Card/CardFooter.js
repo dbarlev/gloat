@@ -8,7 +8,7 @@ const CardFooter = ({ isWishlist, addToWishlist }) => {
 
     return (
         <StyledCardFooter isWishlist={isWishlist}>
-            <MoreDetails>MORE DETAILS</MoreDetails>
+            <MoreDetails role="link">MORE DETAILS</MoreDetails>
             {!isWishlist && !unLiked &&
                 <div>
                     <Button style={{ border: 'none' }}>

@@ -9,8 +9,8 @@ const CardHeading = ({ tagColor, tagText }) => {
             <span style={{ flex: 1 }}>
                 <Tag color={tagColor}>{tagText}</Tag>
             </span>
-            <TagFilled style={{ marginRight: 10, cursor: 'pointer' }} />
-            <span><EllipsisOutlined style={{ fontSize: 20, cursor: 'pointer' }} /></span>
+            <TagFilled title="bookmark" style={{ marginRight: 10, cursor: 'pointer' }} />
+            <span><EllipsisOutlined title="menu" style={{ fontSize: 20, cursor: 'pointer' }} /></span>
         </StyledCardHeading>
     )
 }

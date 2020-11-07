@@ -12,4 +12,4 @@
 2. UI - antd \
 3. Icons - @ant-design/icons
 4. Style - styled-components
-5. fetch - axios-hooks
+5. ajax - axios-hooks

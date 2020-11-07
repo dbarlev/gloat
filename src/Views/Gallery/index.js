@@ -37,7 +37,7 @@ const Gallery = () => {
                                 <Row justify="center" gutter={[16, 16]}>
                                     {
                                         images.map(img => (
-                                            <Col sm={24} md={12} lg={10} xxl={8} xl={8}>
+                                            <Col key={img.id} sm={24} md={12} lg={10} xxl={8} xl={8}>
                                                 <ImageCard editedImages={editedImages} dispatchEditedImages={dispatchEditedImages} img={img} />
                                             </Col>
                                         ))
