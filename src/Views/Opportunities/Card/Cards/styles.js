@@ -8,7 +8,7 @@ export const Container = styled.div`
     grid-gap: 5px;
 `
 
-export const CardHeading = styled.div`
+export const StyledCardHeading = styled.div`
     display: flex;
     margin-bottom: 10px;
 `
@@ -34,12 +34,12 @@ export const Location = styled.div`
 `
 
 export const CoverImage = styled.img`
-    width: 270px;
+    width: 100%;
     height: 145px;
     border-radius: 5px;
 `
 
-export const CardFooter = styled.div`
+export const StyledCardFooter = styled.div`
     font-size: 12px;
     font-weight: 500;
     display: flex;
@@ -53,4 +53,13 @@ export const MoreDetails = styled.div`
    flex: 1;
    line-height: 40px;
    cursor: pointer;
+`
+
+export const PersonContainer = styled.div`
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    height: 145px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 `

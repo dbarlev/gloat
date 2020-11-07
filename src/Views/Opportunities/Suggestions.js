@@ -1,45 +1,26 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import ProjectCard from './Cards/Project';
-import NetworkCard from './Cards/Network';
+import { Row, Col } from 'antd';
+import Card from './Card/Card';
 
 const TYPES = {
     PROJECT: "project",
     NETWORKING: "networking"
 }
 
-const Container = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-gap: 20px;
-`
-
-const Card = styled.div`
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    height: 355px;
-`
-
 function Suggestions({ data, addToWishlist, liked }) {
 
     const filter = item => !liked.includes(item.id) && (item.type == TYPES.PROJECT || item.type === TYPES.NETWORKING);
 
     return (
-        <Container>
+        <Row gutter={[16, 16]}>
             {
                 data && data.filter(filter).map(item => (
-                    <Card key={item.id}>
-                        {
-                            item.type == TYPES.PROJECT
-                                ?
-                                <ProjectCard addToWishlist={addToWishlist} item={item} />
-                                :
-                                <NetworkCard addToWishlist={addToWishlist} item={item} />
-                        }
-                    </Card>
+                    <Col key={item.id} sm={24} md={12} lg={12} xxl={6} xl={8}>
+                        <Card addToWishlist={addToWishlist} item={item} />
+                    </Col>
                 ))
             }
-        </Container>
+        </Row>
     );
 }
 

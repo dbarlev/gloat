@@ -1,51 +1,25 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import ProjectCard from './Cards/Project';
-import NetworkCard from './Cards/Network';
-
-const TYPES = {
-    PROJECT: "project",
-    NETWORKING: "networking"
-}
-
-const Container = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-gap: 20px;
-`
-
-const Card = styled.div`
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    height: 355px;
-`
+import Card from './Card/Card';
+import { Row, Col } from 'antd';
 
 function Wishlist({ addToWishlist, liked, data }) {
 
     return (
-        <Container>
+        <Row gutter={[16, 16]}>
             {
                 data && data.map(item => (
-                    <>
+                    <Col key={item.id} sm={24} md={12} lg={12} xxl={6} xl={8}>
                         {
                             liked.includes(item.id)
                                 ?
-                                <Card key={item.id}>
-                                    {
-                                        item.type == TYPES.PROJECT
-                                            ?
-                                            <ProjectCard addToWishlist={addToWishlist} item={item} />
-                                            :
-                                            <NetworkCard addToWishlist={addToWishlist} item={item} />
-                                    }
-                                </Card>
+                                <Card addToWishlist={addToWishlist} item={item} />
                                 :
                                 null
                         }
-                    </>
+                    </Col>
                 ))
             }
-        </Container>
+        </Row>
     );
 }
 

@@ -12,7 +12,6 @@ const ImageCard = ({ img }) => {
         <LazyLoad key={img.id} height={200}>
             <Card
                 hoverable
-                style={{ width: 300 }}
                 cover={<img alt="example" src={img.url} />}
                 actions={[
                     <Button

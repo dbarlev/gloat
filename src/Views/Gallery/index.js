@@ -7,10 +7,8 @@ import { Spinner } from '../../Components/Spinner';
 import { Row, Col } from 'antd';
 
 const Container = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, 300px);
-    grid-gap: 20px;
     margin-left: 15%;
+    margin-right: 15%;
     margin-top: 3%;
     margin-bottom: 20px;
 `
@@ -36,14 +34,15 @@ const Gallery = () => {
                     <>
                         {!!images.length &&
                             <Pagniate dataCollection={totalImages} setCurrentData={setImages} maxPerPage={maxPerPage}>
-                                <Container>
+                            <Row justify="center" gutter={[16, 16]}>
                                     {
                                         images.map(img => (
-                                            <ImageCard img={img} />
+                                            <Col sm={24} md={12} lg={10} xxl={6} xl={7}>
+                                                <ImageCard img={img} />
+                                            </Col>
                                         ))
                                     }
-
-                                </Container>
+                                </Row>
                             </Pagniate>
                         }
                     </>
