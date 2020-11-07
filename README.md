@@ -8,8 +8,8 @@
 5. ENJOY! :D
 
 ## 3rd party libraries
-Router - @reach/router
-UI - antd
-Icons - @ant-design/icons
-Style - styled-components
-Ajax calls - axios-hooks
+Router - @reach/router.
+UI - antd.
+Icons - @ant-design/icons.
+Style - styled-components.
+Ajax calls - axios-hooks.
