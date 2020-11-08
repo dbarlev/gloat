@@ -54,6 +54,7 @@ const Actions = ({ img, editedImages, dispatchEditedImages, newTitle }) => {
         const saveImage = img;
         saveImage.title = imgTitle || img.title;
         console.log(saveImage);
+        setImageTitle(false);
         ToastSuccess(`Image ${img.id} saved successfully!`);
     }
 
