@@ -20,6 +20,15 @@ const StyledButton = styled(Button)`
     background: ${COLORS.BLUE} !important;
     color: white !important;
     height: 40px;
+
+    &[disabled]{
+        color: rgba(0, 0, 0, 0.25) !important;
+        background: #f5f5f5 !important;
+        border-color: #d9d9d9 !important;
+        text-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
 `
 
 const Actions = ({ img, editedImages, dispatchEditedImages, newTitle }) => {
@@ -78,7 +87,7 @@ const Actions = ({ img, editedImages, dispatchEditedImages, newTitle }) => {
                         }
 
                         <StyledButton
-                            disabled={imgState}
+                            disabled={!editedImages[img.id]}
                             onClick={save}
                         >
                             SAVE
